@@ -11,6 +11,7 @@ export default function Application(props) {
           src="images/logo.png"
           alt="Interview Scheduler"
         />
+        <hr className="sidebar__separator sidebar--centered" />
         
 {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
       </section>
