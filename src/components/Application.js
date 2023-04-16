@@ -12,7 +12,8 @@ export default function Application(props) {
           alt="Interview Scheduler"
         />
         <hr className="sidebar__separator sidebar--centered" />
-        
+        <nav className="sidebar__menu"></nav>
+      
 {/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
       </section>
       <section className="schedule">
