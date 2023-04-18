@@ -25,7 +25,7 @@ it("renders a confirm button", () => {
   expect(getByText("Confirm")).toHaveClass("button--confirm");
 });
 
-it.skip("renders a danger button", () => {
+it("renders a danger button", () => {
   const { getByText } = render(<Button danger>Danger</Button>);
   expect(getByText("Danger")).toHaveClass("button--danger");
 });
