@@ -20,7 +20,7 @@ it("renders a default button style", () => {
   expect(getByText("Default")).toHaveClass("button");
 });
 
-it.skip("renders a confirm button", () => {
+it("renders a confirm button", () => {
   const { getByText } = render(<Button confirm>Confirm</Button>);
   expect(getByText("Confirm")).toHaveClass("button--confirm");
 });
