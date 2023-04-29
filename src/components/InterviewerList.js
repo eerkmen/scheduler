@@ -26,6 +26,9 @@ const InterviewerList = props => {
     </section>
   );
 };
+
+InterviewerList.propTypes = {
+  interviewers: propTypes.array.isRequired,
 };
 
 export default InterviewerList;
