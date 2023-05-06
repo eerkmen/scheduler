@@ -151,4 +151,11 @@ storiesOf("InterviewerList", module)
         onDelete={action("onDelete")}
       />
     ))
+    .add("Confirm", () => (
+      <Confirm
+        message={"Delete the appointment?"}
+        onCancel={action("onCancel")}
+        onConfirm={action("onConfirm")}
+      />
+    ))
     
