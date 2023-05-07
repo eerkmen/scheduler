@@ -158,6 +158,8 @@ storiesOf("InterviewerList", module)
         onConfirm={action("onConfirm")}
       />
     ))
-    
+    .add("Error", () => (
+      <Error message={"Could not delete appointment"} onClose={action("onClose")} />
+    ))
     .add("Status", () => <Status message={"Deleting"} />)
-   
+    
