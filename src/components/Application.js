@@ -1,7 +1,7 @@
 import React from "react";
 import DayList from "./DayList";
 import "components/Application.scss";
-
+import Appointment from "./Appointment";
 
 const days = [
   {
@@ -43,10 +43,9 @@ export default function Application(props) {
           src="images/lhl.png"
           alt="Lighthouse Labs"
         />
-{/* Replace this with the sidebar elements during the "Project Setup & Familiarity" activity. */}
       </section>
       <section className="schedule">
-        {/* Replace this with the schedule elements durint the "The Scheduler" activity. */}
+        {schedule}
       </section>
     </main>
   );
