@@ -4,7 +4,10 @@ import Header from './Header';
 import Empty from "./Empty";
 import Show from "./Show";
 
-
+import Form from './Form';
+import Status from './Status';
+import Confirm from './Confirm';
+import Error from './Error';
 
 
 export default function Appointment(props) {
