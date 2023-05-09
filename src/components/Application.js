@@ -62,6 +62,24 @@ const appointments = {
 
 
 export default function Application(props) {
+  const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
+  const interviewerPeeps = getInterviewersForDay(state, state.day);
+  const schedule = getAppointmentsForDay(state, state.day).map(
+    appointment => {
+    const interview = getInterview(state, appointment.interview);
+    return (
+      <Appointment
+        key={appointment.id}
+        id={appointment.id}
+        time={appointment.time}
+        interview={interview}
+        interviewers={interviewerPeeps}
+        bookInterview={bookInterview}
+        cancelInterview={cancelInterview}
+      />
+    );
+  });
+
   return (
     <main className="layout">
       <section className="sidebar">
