@@ -17,5 +17,11 @@ export default function Form(props) {
     setError("");
   };
 
-  
+  const validating = () => {
+    if (!student) {
+      setError("Student name cannot be blank");
+      return;
+    }
+
+ 
 };
