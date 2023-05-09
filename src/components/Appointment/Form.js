@@ -11,5 +11,11 @@ export default function Form(props) {
     reset();
     onCancel();
   };
- 
+  const reset = () => {
+    setStudent("");
+    setInterviewer(null);
+    setError("");
+  };
+
+  
 };
