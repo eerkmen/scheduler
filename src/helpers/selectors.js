@@ -5,5 +5,7 @@ export const getAppointmentsForDay = (state, dayName) => {
     return [];
   }
 
- 
+  return Object.values(state.appointments).filter(appointment => {
+    return dayData.appointments.includes(appointment.id);
+  });
 };
