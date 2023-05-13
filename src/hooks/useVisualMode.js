@@ -11,7 +11,14 @@ export default function useVisualMode(initial) {
       setMode(history[history.length - 1]);
     }
   }  
+  function transition(mode, replace = false) {
+    if (replace) {
+      setMode(mode);
+      history.pop();
+    } 
+    setMode(mode);
+    setHistory(prev => [...prev, mode]);
+  }
 
-  return { transition, mode, back };
 }
   // removes the last item in the history array, and sets the mode to be the second to last s
