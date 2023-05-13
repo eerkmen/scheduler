@@ -19,6 +19,6 @@ export default function useVisualMode(initial) {
     setMode(mode);
     setHistory(prev => [...prev, mode]);
   }
-
+  return { transition, mode, back };
 }
   // removes the last item in the history array, and sets the mode to be the second to last s
