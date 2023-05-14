@@ -58,6 +58,7 @@ export default function Appointment(props) {
           onEdit={() => transition(EDIT)}
         />
       )}
+        {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
     </article>
   )
 }
