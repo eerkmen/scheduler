@@ -49,7 +49,15 @@ export default function Appointment(props) {
   };
   return (
     <article className="appointment" data-testid="appointment">
-      {/* <Header time={props.time} /> */}
+       <Header time={time} />
+      {mode === SHOW && (
+        <Show
+          student={interview.student}
+          interviewer={interview.interviewer}
+          onDelete={() => transition(CONFIRM)}
+          onEdit={() => transition(EDIT)}
+        />
+      )}
     </article>
   )
 }
