@@ -22,6 +22,17 @@ const ERROR_SAVE = "ERROR-SAVE";
 export default function Appointment(props) {
   const { id, time, interview, cancelInterview, interviewers, bookInterview} = props;
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
+
+  function deleteApp() {
+    transition(DELETING);
+    cancelInterview(id)
+      .then(() => {
+        transition(EMPTY);
+      })
+      .catch(() => {
+        transition(ERROR_DELETE, true);
+      });
+  };
   return (
     <article className="appointment" data-testid="appointment">
       {/* <Header time={props.time} /> */}
