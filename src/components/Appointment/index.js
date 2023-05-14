@@ -79,6 +79,7 @@ export default function Appointment(props) {
           mode={mode}
         />
       )}
+      {mode === SAVING && <Status message={"Saving"} />}
     </article>
   )
 }
