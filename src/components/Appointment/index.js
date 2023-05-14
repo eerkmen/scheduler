@@ -20,6 +20,7 @@ const ERROR_DELETE = "ERROR_DELETE";
 const ERROR_SAVE = "ERROR-SAVE";
 
 export default function Appointment(props) {
+  const { id, time, interview, cancelInterview, interviewers, bookInterview} = props;
   return (
     <article className="appointment" data-testid="appointment">
       {/* <Header time={props.time} /> */}
