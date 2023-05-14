@@ -33,6 +33,20 @@ export default function Appointment(props) {
         transition(ERROR_DELETE, true);
       });
   };
+  function save = (name, interviewer) => {
+    const interview = {
+      student: name,
+      interviewer,
+    };
+    transition(SAVING);
+    bookInterview(id, interview)
+      .then(() => {
+        transition(SHOW);
+      })
+      .catch((err) => {
+        transition(ERROR_SAVE, true)
+      })
+  };
   return (
     <article className="appointment" data-testid="appointment">
       {/* <Header time={props.time} /> */}
