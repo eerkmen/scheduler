@@ -80,6 +80,7 @@ export default function Appointment(props) {
         />
       )}
       {mode === SAVING && <Status message={"Saving"} />}
+      {mode === DELETING && <Status message={"Deleting"} />}
     </article>
   )
 }
