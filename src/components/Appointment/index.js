@@ -59,6 +59,13 @@ export default function Appointment(props) {
         />
       )}
         {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
+        {mode === CONFIRM && (
+      <Confirm
+        message={"Are you sure you would like to cancel this appointment?"}
+        onCancel={back}
+        onConfirm={deleteApp}
+      />
+      )}
     </article>
   )
 }
