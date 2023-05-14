@@ -81,6 +81,12 @@ export default function Appointment(props) {
       )}
       {mode === SAVING && <Status message={"Saving"} />}
       {mode === DELETING && <Status message={"Deleting"} />}
+      {mode === ERROR_SAVE && (
+        <Error
+          message={"Could not book the appointment"}
+          onClose={() => back()}
+        />
+      )}
     </article>
   )
 }
