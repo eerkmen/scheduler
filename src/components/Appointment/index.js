@@ -21,6 +21,7 @@ const ERROR_SAVE = "ERROR-SAVE";
 
 export default function Appointment(props) {
   const { id, time, interview, cancelInterview, interviewers, bookInterview} = props;
+  const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
   return (
     <article className="appointment" data-testid="appointment">
       {/* <Header time={props.time} /> */}
