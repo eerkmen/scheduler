@@ -66,6 +66,9 @@ export default function Appointment(props) {
         onConfirm={deleteApp}
       />
       )}
+      {mode === CREATE && (
+        <Form interviewers={interviewers} onSave={save} onCancel={() => back()} mode={mode} />
+      )}
     </article>
   )
 }
