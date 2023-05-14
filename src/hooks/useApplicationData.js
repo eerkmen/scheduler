@@ -9,5 +9,15 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  const bookInterview = (id, interview) => {
+    const appointment = {
+      ...state.appointments[id],
+      interview: { ...interview }
+    }
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+
 
 }
