@@ -35,7 +35,9 @@ export default function useApplicationData() {
 
   useEffect(() => {
     Promise.all([
-     
+      axios.get("/api/days"),
+      axios.get("/api/appointments"),
+      axios.get("/api/interviewers")
     ]).then((all) => {
       
     }).catch((error) => {
