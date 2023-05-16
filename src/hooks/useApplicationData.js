@@ -41,7 +41,7 @@ export default function useApplicationData() {
     ]).then((all) => {
       
     }).catch((error) => {
-      
+      console.error(error.message);
     });
   }, []);
 
