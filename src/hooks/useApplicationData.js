@@ -34,7 +34,13 @@ export default function useApplicationData() {
   };
 
   useEffect(() => {
-   
+    Promise.all([
+     
+    ]).then((all) => {
+      
+    }).catch((error) => {
+      
+    });
   }, []);
 
 }
