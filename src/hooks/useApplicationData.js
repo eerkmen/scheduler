@@ -39,7 +39,7 @@ export default function useApplicationData() {
       axios.get("/api/appointments"),
       axios.get("/api/interviewers")
     ]).then((all) => {
-      
+      setState(prev => ());
     }).catch((error) => {
       console.error(error.message);
     });
