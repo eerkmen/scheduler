@@ -33,5 +33,8 @@ export default function useApplicationData() {
       });
   };
 
+  useEffect(() => {
+   
+  }, []);
 
 }
