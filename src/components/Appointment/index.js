@@ -92,9 +92,7 @@ export default function Appointment(props) {
           onClose={() => back()}
         />
       )}
-      {mode === ERROR_DELETE && (
-        <Error message={"Could not remove the appointment"} onClose={() => back()}} />
-      )}
+      {mode === ERROR_DELETE && <Error onClose={back} message={"Could not cancel the appointment."}/>}
     </article>
   );
 };
