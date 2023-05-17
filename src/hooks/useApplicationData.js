@@ -9,7 +9,9 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
-
+  function updateSpots(day, number) {
+   
+  } 
   const setDay = day => setState({ ...state, day });
  
   const bookInterview = (id, interview) => {
