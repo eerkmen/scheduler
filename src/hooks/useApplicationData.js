@@ -29,6 +29,11 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
+  const cancelInterview = (id) => {
+    
+  }
+  
+
     return axios.put(`/api/appointments/${id}`, {...appointment})
       .then(() => {
         dispatch({
