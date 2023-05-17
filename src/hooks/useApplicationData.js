@@ -10,6 +10,8 @@ export default function useApplicationData() {
   });
 
   function updateSpots(day, number) {
+    const dayID = state.days.map(day=> day.name).indexOf(day);
+    const spots = state.days[dayID].spots;
    
   } 
   const setDay = day => setState({ ...state, day });
