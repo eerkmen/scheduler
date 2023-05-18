@@ -76,4 +76,10 @@ export default function useApplicationData() {
     });
   }, []);
 
+  return {
+    setDay,
+    bookInterview,
+    state,
+    cancelInterview,
+  };
 }
