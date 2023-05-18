@@ -18,3 +18,19 @@ Scheduler is a React application for managing appointments. It allows users to v
 - Edit an existing appointment by selecting the appointment and making changes.
 - Cancel an appointment to free up the time slot for others.
 - See the number of available appointment spots for each day.
+
+## Technologies Used
+
+- React
+- Axios
+- PostgreSQL
+- Node.js
+- Express
+- WebSocket
+
+## Screenshots
+
+
+## Contributing
+
+Contributions are welcome! If you encounter any issues or have suggestions for improvements, please create a new issue or submit a pull request.
