@@ -10,3 +10,11 @@ Scheduler is a React application for managing appointments. It allows users to v
 4. Set up the database by following the instructions in the `scheduler-api` repository's README.md file.
 5. Start the development server using `npm start`.
 6. Access the application in your browser at `http://localhost:3000`.
+
+## Features
+
+- View appointments for different days.
+- Book an appointment by selecting an available time slot and entering student information.
+- Edit an existing appointment by selecting the appointment and making changes.
+- Cancel an appointment to free up the time slot for others.
+- See the number of available appointment spots for each day.
