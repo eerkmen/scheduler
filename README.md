@@ -27,6 +27,8 @@ Scheduler is a React application for managing appointments. It allows users to v
 - Node.js
 - Express
 - WebSocket
+- Classnames
+- @testing-library/react-hooks
 
 ## Screenshots
 
