@@ -40,6 +40,9 @@ Deleting an interview
 
 ![Delete](delete.png)
 
+## Important!
+- The [SchedulerAPI] (https://github.com/lighthouse-labs/scheduler-api) used to interact with a static database is not included in this file. Follow the instruction on SchedulerAPI.
+
 ## Contributing
 
 Contributions are welcome! If you encounter any issues or have suggestions for improvements, please create a new issue or submit a pull request.
