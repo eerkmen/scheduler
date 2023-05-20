@@ -6,8 +6,12 @@ export function getInterview(state, interview){
     }
   }
   return null;
-
 }
+
+export function getInterviewersForDay(state, day) {
+ 
+}
+
 export const getAppointmentsForDay = (state, dayName) => {
   const [dayData] = state.days.filter(day => day.name === dayName);
 
