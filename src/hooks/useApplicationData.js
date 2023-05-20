@@ -28,8 +28,10 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
+  }
+  
+  async function cancelInterview(id) {
 
-  const cancelInterview = (id) => {
     const appointment = {
       ...state.appointments[id],
       interview: null
@@ -37,32 +39,20 @@ export default function useApplicationData() {
     const appointments = {
       ...state.appointments,
       [id]: appointment
-    }
-    
-    return axios.delete(`api/appointments/${appointment.id}`, appointment)
-      .then( response =>{
-        updateSpots(state.day, 1);
-        setState({
-          ...state,
-          appointments
-        })
-      });
-  }
-  
+    };
 
-    return axios.put(`/api/appointments/${id}`, {...appointment})
-      .then(() => {
-        dispatch({
-          type: SET_INTERVIEW,
-          id,
-          interview: interview ?? null,
-        });
-        dispatch({
-          type: SET_DAYS,
-          id,
-        });
-      });
-  };
+    await axios.delete(`api/appointments/${id}`, appointment)
+      .then( response =>{
+        const status = res.status
+        setState(prev => ({
+          ...prev,
+          appointments,
+          days
+        }));
+      return status;
+      })
+  }
+      
 
   useEffect(() => {
     Promise.all([
