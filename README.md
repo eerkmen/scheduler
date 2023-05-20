@@ -31,9 +31,13 @@ Scheduler is a React application for managing appointments. It allows users to v
 - @testing-library/react-hooks
 
 ## Screenshots
-
 ###Editing an interview
 
+<<<<<<< HEAD
+###Editing an interview
+
+=======
+>>>>>>> fc704a7... Update README.md
 ![Edit](edit.png)
 
 ###Deleting an interview
