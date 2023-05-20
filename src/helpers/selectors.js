@@ -9,7 +9,9 @@ export function getInterview(state, interview){
 }
 
 export function getInterviewersForDay(state, day) {
- 
+  if (state.days.length === 0) {
+    return [];
+  }
 }
 
 export const getAppointmentsForDay = (state, dayName) => {
