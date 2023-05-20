@@ -16,6 +16,7 @@ export function getInterviewersForDay(state, day) {
   if (!found) {
     return [];
   }
+  return found.interviewers.map((id) => state.interviewers[id])
 }
 
 export const getAppointmentsForDay = (state, dayName) => {
