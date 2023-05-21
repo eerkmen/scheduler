@@ -26,6 +26,20 @@ export default function useApplicationData() {
       ...state.appointments,
       [id]: appointment
     };
+    const oldInt = state.appointments[id].interview;
+    const newInt = oldInt ? 0 : -1;
+
+    const days = updateSpots(newInt)
+    return axios.put(`api/appointments/${appointment.id}`, appointment)
+      .then((res) => {
+        const status = res.status
+        setState(prev => ({
+          ...prev,
+          appointments,
+          days
+        }));
+        return status;
+      })
   }
   
   async function cancelInterview(id) {
