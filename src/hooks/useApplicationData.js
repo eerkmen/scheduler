@@ -9,14 +9,12 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
-  function updateSpots(day, number) {
-    const dayID = state.days.map(day=> day.name).indexOf(day);
-    const spots = state.days[dayID].spots;
-    state.days[dayID] = {
-      ...state.days[dayID],
-      spots: spots + number
-    }
-  } 
+  function updateSpots(spot) {
+    const selectedDay = state.days.find(day => day.name === state.day);
+    const dayId = selectedDay.id;
+    const daysUpdated = [...state.days].map(day => day.id === dayId ? { ...day, spots: day.spots + spot } : { ...day });
+    return daysUpdated;
+  };
   const setDay = day => setState({ ...state, day });
  
   const bookInterview = (id, interview) => {
