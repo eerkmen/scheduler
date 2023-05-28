@@ -1,5 +1,7 @@
 import React from "react";
 export default function Empty(props) {
+    // Destructure props for better readability
+    const { onAdd } = props;
   return (
     <main className="appointment__add">
      <img
