@@ -1,6 +1,7 @@
 import React from "react";
 
 export default function Error(props) {
+  // Destructure props for better readability
   const { message, onClose } = props;
   return (
     <main className="appointment__card appointment__card--error">
