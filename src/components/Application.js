@@ -7,7 +7,7 @@ import useApplicationData from "hooks/useApplicationData";
 
 export default function Application(props) {
   const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
-  const interviewerPeeps = getInterviewersForDay(state, state.day);
+  const interviewer = getInterviewersForDay(state, state.day);
   const schedule = getAppointmentsForDay(state, state.day).map(
     appointment => {
     const interview = getInterview(state, appointment.interview);
@@ -17,7 +17,7 @@ export default function Application(props) {
         id={appointment.id}
         time={appointment.time}
         interview={interview}
-        interviewers={interviewerPeeps}
+        interviewers={interviewer}
         bookInterview={bookInterview}
         cancelInterview={cancelInterview}
       />
@@ -48,6 +48,10 @@ export default function Application(props) {
       </section>
       <section className="schedule">
         {schedule}
+        <Appointment
+        key="last"
+        time="5pm" 
+        />
       </section>
     </main>
   );
