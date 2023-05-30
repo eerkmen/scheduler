@@ -27,14 +27,18 @@ export default function DayListItem(props) {
    * @returns {string} - Formatted text for the number of spots.
    */
   function formatSpots(spots) {
+    if (spots === 0) {
+      return <h3 className="text--light"> no spots remaining </h3>
+    }
+    if (spots === 1) {
+    return <h3 className="text--light"> 1 spot remaining </h3>
+    }
+
     if (spots > 1) {
-      return `${spots} spots remaining`;
-    } else if (spots === 1) {
-      return `1 spot remaining`;
-    } else {
-      return `no spots remaining`;
+      return <h3 className="text--light"> {spots} spots remaining </h3>
     }
   }
+
 
   return (
     <li data-testid="day" onClick={() => setDay(name)} className={dayClass}>
