@@ -1,3 +1,4 @@
+import { useState} from "react";
 // Custom Hook for managing visual modes in the Appointment component
 export default function useVisualMode(initial) {
   const [mode, setMode] = useState(initial); // State variable to track the current mode
