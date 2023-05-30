@@ -30,15 +30,14 @@ export default function DayListItem(props) {
     if (spots === 0) {
       return "no spots remaining"
     }
-    if (spots === 1) {
-    return <h3 className="text--light"> 1 spot remaining </h3>
-    }
-
     if (spots > 1) {
       return `${spots} spots remaining`
     }
-  }
+    if (spots === 1) {
+    return "1 spot remaining" 
+    }
 
+  }
 
 
   return (
