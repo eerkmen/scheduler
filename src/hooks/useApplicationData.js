@@ -53,11 +53,9 @@ export default function useApplicationData() {
       [id]: appointment
     };
 
-    const oldInt = state.appointments[id].interview;
-    const newInt = oldInt ? 0 : -1;
-
-    const days = updateSpots(newInt)
-    await axios.delete(`api/appointments/${id}`, appointment)
+    
+    const days = updateSpots(1)
+    await axios.delete(`/api/appointments/${id}`, appointment)
       .then( response =>{
         const status = response.status
         setState(prev => ({
