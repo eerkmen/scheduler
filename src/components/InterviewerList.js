@@ -8,14 +8,14 @@ const InterviewerList = (props) => {
   const { interviewers, onChange, value } = props;
 
   // Create an array of InterviewerListItem components
-  const interviewerItems = interviewers.map((interviewer) => {
+  const interviewerItems = interviewers.map(interviewerInfo => {
     return (
       <InterviewerListItem
-        key={interviewer.id}
-        name={interviewer.name}
-        avatar={interviewer.avatar}
-        setInterviewer={() => onChange(interviewer.id)}
-        selected={interviewer.id === value}
+        key={interviewerInfo.id}
+        name={interviewerInfo.name}
+        avatar={interviewerInfo.avatar}
+        setInterviewer={() => onChange(interviewerInfo.id)}
+        selected={interviewerInfo.id === value}
       />
     );
   });
