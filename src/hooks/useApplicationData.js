@@ -30,7 +30,7 @@ export default function useApplicationData() {
     const newInt = oldInt ? 0 : -1;
 
     const days = updateSpots(newInt)
-    return axios.put(`api/appointments/${appointment.id}`, appointment)
+    return axios.put(`/api/appointments/${appointment.id}`, appointment)
       .then((res) => {
         const status = res.status
         setState(prev => ({
