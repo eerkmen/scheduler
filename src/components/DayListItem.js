@@ -12,6 +12,7 @@ import "components/DayListItem.scss";
  * @returns {JSX.Element} - Rendered component.
  */
 export default function DayListItem(props) {
+  // Destructure the props for easier access
   const { name, selected, spots, setDay } = props;
 
   // Set the CSS classes for the day item based on its state
