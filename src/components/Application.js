@@ -5,11 +5,20 @@ import Appointment from "./Appointment";
 import { getInterviewersForDay, getAppointmentsForDay, getInterview } from "helpers/selectors";
 import useApplicationData from "hooks/useApplicationData";
 
+/**
+ * The main component of the application.
+ * @param {Object} props - The props that are passed to the component.
+ * @returns {JSX.Element} - Rendered component.
+ */
 export default function Application(props) {
+  // Custom hook to manage application data state and functions
   const { state, setDay, bookInterview, cancelInterview } = useApplicationData();
+
+  // Retrieve interviewers for the selected day
   const interviewer = getInterviewersForDay(state, state.day);
-  const schedule = getAppointmentsForDay(state, state.day).map(
-    appointment => {
+
+  // Generate the schedule by mapping through appointments for the selected day
+  const schedule = getAppointmentsForDay(state, state.day).map(appointment => {
     const interview = getInterview(state, appointment.interview);
     return (
       <Appointment
@@ -34,11 +43,8 @@ export default function Application(props) {
         />
         <hr className="sidebar__separator sidebar--centered" />
         <nav className="sidebar__menu">
-        <DayList
-          days={state.days}
-          value={state.day}
-          onChange={setDay}
-        />
+          {/* Render the DayList component */}
+          <DayList days={state.days} value={state.day} onChange={setDay} />
         </nav>
         <img
           className="sidebar__lhl sidebar--centered"
@@ -47,11 +53,11 @@ export default function Application(props) {
         />
       </section>
       <section className="schedule">
+        {/* Render the schedule of appointments */}
         {schedule}
-        <Appointment
-        key="last"
-        time="5pm" 
-        />
+
+        {/* Render the last appointment for 5pm */}
+        <Appointment key="last" time="5pm" />
       </section>
     </main>
   );
