@@ -71,9 +71,8 @@ describe("Application", () => {
       queryByText(day, "Monday")
     );
   
-    expect(getByText(day, "1 spot remaining")).toBeInTheDocument(); 
-    //// problem with resetting the module - should be 2 spots remaining, but previous tests update the state, and so there is 0 spots -> 1 spot instead of 1 spot -> 2 spots
-    //// the problem seems (from cursory googling) to be with the cleanup (resetModules) and the ES6 import syntax, but I couldn't figure out how to get require to work 
+    expect(getByText(day, "2 spots remaining")).toBeInTheDocument(); 
+   
   });
 
   it("loads data, edits an interview and keeps the spots remaining for Monday the same", async() => {
