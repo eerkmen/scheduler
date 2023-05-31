@@ -19,35 +19,57 @@ const CONFIRM = "CONFIRM";
 const ERROR_DELETE = "ERROR_DELETE";
 const ERROR_SAVE = "ERROR-SAVE";
 
+/**
+ * Component representing an appointment.
+ * @param {Object} props - The props that are passed to the component.
+ * @param {number} props.id - The ID of the appointment.
+ * @param {string} props.time - The time of the appointment.
+ * @param {Object} props.interview - The interview data.
+ * @param {function} props.cancelInterview - Function to cancel the appointment.
+ * @param {Array} props.interviewers - The available interviewers.
+ * @param {function} props.bookInterview - Function to book the appointment.
+ * @returns {JSX.Element} - Rendered component.
+ */
+
 export default function Appointment(props) {
   const { id, time, interview, cancelInterview, interviewers, bookInterview} = props;
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
   
   function deleteApp() {
+    // Transition to the deleting mode
     transition(DELETING);
+    // Call the cancelInterview function to delete the appointment
     cancelInterview(id)
       .then(() => {
+        // Transition to the empty mode after successfully deleting the appointment
         transition(EMPTY);
       })
       .catch(() => {
+        // Transition to the error mode if there is an error while deleting
         transition(ERROR_DELETE, true);
       });
-  };
-
+  }
+  
   function save(name, interviewer) {
+    // Create an interview object with the provided name and interviewer
     const interview = {
       student: name,
       interviewer,
     };
+    // Transition to the saving mode
     transition(SAVING);
+    // Call the bookInterview function to save the appointment
     bookInterview(id, interview)
       .then(() => {
+        // Transition to the show mode after successfully saving the appointment
         transition(SHOW);
       })
       .catch(() => {
-        transition(ERROR_SAVE, true)
-      })
-  };
+        // Transition to the error mode if there is an error while saving
+        transition(ERROR_SAVE, true);
+      });
+  }
+  
 
 
 
