@@ -36,9 +36,7 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
   
   function deleteApp() {
-    // Transition to the deleting mode
     transition(DELETING);
-    // Call the cancelInterview function to delete the appointment
     cancelInterview(id)
       .then(() => {
         // Transition to the empty mode after successfully deleting the appointment
@@ -51,12 +49,11 @@ export default function Appointment(props) {
   }
   
   function save(name, interviewer) {
-    // Create an interview object with the provided name and interviewer
     const interview = {
       student: name,
       interviewer,
     };
-    // Transition to the saving mode
+   
     transition(SAVING);
     // Call the bookInterview function to save the appointment
     bookInterview(id, interview)
