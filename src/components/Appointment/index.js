@@ -36,7 +36,7 @@ export default function Appointment(props) {
   const { mode, transition, back } = useVisualMode(interview ? SHOW : EMPTY);
   
   function deleteApp() {
-    transition(DELETING);
+    transition(DELETING, true);
     cancelInterview(id)
       .then(() => {
         // Transition to the empty mode after successfully deleting the appointment
