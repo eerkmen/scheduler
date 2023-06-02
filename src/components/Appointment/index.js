@@ -84,7 +84,7 @@ export default function Appointment(props) {
       {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
       {mode === CONFIRM && <Confirm message={"Are you sure you would like to delete this appointment?"} onCancel={back} onConfirm={() => deleteApp(props.id)}/>}
       {mode === CREATE && (
-        <Form interviewers={interviewers} onSave={save} onCancel={() => deleteApp(id)} />
+        <Form interviewers={interviewers} onSave={save} onCancel={back} />
       )}
       {mode === EDIT && (
         <Form
