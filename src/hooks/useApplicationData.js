@@ -9,6 +9,18 @@ export default function useApplicationData() {
     interviewers: {}
   });
 
+  useEffect(() => {
+    Promise.all([
+      axios.get("/api/days"),
+      axios.get("/api/appointments"),
+      axios.get("/api/interviewers")
+    ]).then((all) => {
+      setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
+    }).catch((error) => {
+      console.error(error.message);
+    });
+  }, []);
+
   function updateSpots(spot) {
     const selectedDay = state.days.find(day => day.name === state.day);
     const dayId = selectedDay.id;
@@ -67,19 +79,6 @@ export default function useApplicationData() {
       })
   }
       
-
-  useEffect(() => {
-    Promise.all([
-      axios.get("/api/days"),
-      axios.get("/api/appointments"),
-      axios.get("/api/interviewers")
-    ]).then((all) => {
-      setState(prev => ({...prev, days: all[0].data, appointments: all[1].data, interviewers: all[2].data}));
-    }).catch((error) => {
-      console.error(error.message);
-    });
-  }, []);
-
   return {
     setDay,
     bookInterview,
